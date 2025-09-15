@@ -1,23 +1,23 @@
-class Node{
+class Node1{
     int data;
-    Node next;
-    Node(int data){
+    Node1 next;
+    Node1(int data){
         this.data = data;
         this.next = null;
     }
 }
 
-class LinkedList{
-    Node head;
+class LinkedList1{
+    Node1 head;
 
     void append(int data){
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         if (head == null){
             head = newNode;
             return;
         }
 
-        Node temp = head;
+        Node1 temp = head;
         while(temp.next != null){
             temp = temp.next;
         }
@@ -25,7 +25,7 @@ class LinkedList{
     }
 
     boolean search(int key) {
-        Node temp = head;
+        Node1 temp = head;
         while (temp != null){
             if(temp.data == key){
                 return true;
@@ -34,8 +34,28 @@ class LinkedList{
         }
         return false;
     }
+
+    void delete(int key){
+        if (head == null){
+            return;
+        }
+
+        if(head.data == key){
+            head = head.next;
+        }
+        Node1 temp = head;
+        while(temp.next != null && temp.next.data != key){
+            temp = temp.next;
+        }
+
+        if(temp.next == null){
+            return;
+        }
+
+        temp.next = temp.next.next;
+    }
     void printList(){
-        Node temp = head;
+        Node1 temp = head;
         while(temp != null){
             System.out.print(temp.data+"->");
             temp = temp.next;
@@ -45,13 +65,15 @@ class LinkedList{
 }
 public class find {
     public static void main(String[] args) {
-        LinkedList l1 = new LinkedList();
+        LinkedList1 l1 = new LinkedList1();
         l1.append(100);
         l1.append(120);
         l1.append(130);
+        l1.append(140);
+        l1.append(150);
         l1.printList();
 
-        int key = 20;
+        int key = 100;
         if(l1.search(key)){
             System.out.println(key + "key found");
         }
@@ -65,5 +87,21 @@ public class find {
         else{
             System.out.println(key + "Not found");
         }
+        
+        key = 150;
+        l1.delete(key);
+        l1.printList();
+
+        key = 1200;
+        l1.printList();
+        l1.delete(key);
+
+        key = 120;
+        l1.delete(key);
+        l1.printList();
+        
+        key = 100;
+        l1.delete(key);
+        l1.printList();
     }
 }
