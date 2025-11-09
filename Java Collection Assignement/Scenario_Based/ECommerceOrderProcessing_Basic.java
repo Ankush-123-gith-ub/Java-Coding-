@@ -1,0 +1,1 @@
+import java.util.*; public class ECommerceOrderProcessing_Basic { static class Order{String id;Order(String i){id=i;}public String toString(){return id;}} public static void main(String[] a){List<Order> all=new ArrayList<>();all.add(new Order("O1"));all.add(new Order("O2"));Set<String> set=new HashSet<>();for(Order o:all)set.add(o.id);System.out.println(set);}}
