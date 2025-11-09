@@ -1,0 +1,1 @@
+import java.util.*; public class Q1_ReverseQueue_Basic { public static void main(String[] a){Queue<Integer>q=new LinkedList<>(Arrays.asList(10,20,30));Stack<Integer>s=new Stack<>();while(!q.isEmpty())s.push(q.remove());while(!s.isEmpty())q.add(s.pop());System.out.println(q);}}
