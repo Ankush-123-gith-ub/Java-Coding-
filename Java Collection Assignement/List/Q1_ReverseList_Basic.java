@@ -1,0 +1,1 @@
+import java.util.*; public class Q1_ReverseList_Basic { public static void main(String[] a){ List<Integer> l=Arrays.asList(1,2,3); Collections.reverse(l); System.out.println(l);} }
