@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.eclipse.wildwebdeveloper.xml.validation.enabled=false
+org.eclipse.wildwebdeveloper.xml.validation.namespaces.enabled=never
+org.eclipse.wildwebdeveloper.xml.validation.noGrammar=ignore
+org.eclipse.wildwebdeveloper.xml.validation.schema.enabled=never
